@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "authentication"
+name = "center"
 version = "0.1.0"
 description = ""
 authors = ["wenke.lai <wenke.studio@gmail.com>"]
