@@ -1,5 +1,5 @@
 quick-start:
-	uvicorn server.main:app --reload
+	reflex run --loglevel debug
 
 
 requirements:
