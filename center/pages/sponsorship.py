@@ -1,6 +1,9 @@
 import reflex as rx
 
+from center import layouts
 
+
+@layouts.dashboard
 def sponsorship():
     """
     The Sponsorship Page
@@ -8,6 +11,6 @@ def sponsorship():
     This page displays information about the sponsorship opportunities
     available to users.
     """
-    return rx.container(
+    return rx.box(
         rx.text("Sponsorship Page"),
     )
