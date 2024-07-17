@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from enum import Enum
 from typing import List, Optional
 
@@ -17,7 +15,7 @@ class User(rx.Model, table=True):
     username: str = ""
 
     # Relationships
-    services: List[Service] = Relationship(back_populates="user")
+    services: List["Service"] = Relationship(back_populates="user")
 
 
 class ServiceStatus(Enum):
