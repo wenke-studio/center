@@ -20,8 +20,13 @@ class LoginState(AuthState):
                 self.user = user
                 return rx.redirect("/")
             else:
-                self.set_error("Invalid email or password")
+                self.error = "Invalid email or password"
                 return
+
+    def on_mount(self) -> None:
+        self.email = ""
+        self.password = ""
+        self.error = ""
 
 
 @layouts.landing_page
@@ -37,10 +42,12 @@ def login() -> rx.Component:
                 placeholder="Password",
                 on_blur=LoginState.set_password,
             ),
+            rx.link("Signup", href="/auth/signup"),
             rx.button("Login", on_click=LoginState.login),
             rx.cond(
                 LoginState.error,
                 rx.text(LoginState.error, class_name="text-red-500"),
             ),
-        )
+        ),
+        on_mount=LoginState.on_mount,
     )

@@ -28,6 +28,12 @@ class SignupState(AuthState):
             session.commit()
             return rx.redirect("/auth/login")
 
+    def on_mount(self) -> None:
+        self.email = ""
+        self.password = ""
+        self.confirm_password = ""
+        self.error = ""
+
 
 @layouts.landing_page
 def signup() -> rx.Component:
@@ -47,9 +53,14 @@ def signup() -> rx.Component:
                 on_blur=SignupState.set_confirm_password,
             ),
             rx.button("Signup", on_click=SignupState.signup),
+            rx.hstack(
+                rx.text("Already have an account?"),
+                rx.link("Login", href="/auth/login"),
+            ),
             rx.cond(
                 SignupState.error,
                 rx.text(SignupState.error, class_name="text-red-500"),
             ),
-        )
+        ),
+        on_mount=SignupState.on_mount,
     )
