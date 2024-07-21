@@ -35,6 +35,7 @@ class SignupState(AuthState):
         self.error = ""
 
 
+@rx.page(route="/auth/signup")
 @layouts.landing_page
 def signup() -> rx.Component:
     return rx.card(

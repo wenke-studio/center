@@ -2,7 +2,7 @@ import reflex as rx
 
 from center import layouts
 
-
+@rx.page(route="/sponsorship")
 @layouts.dashboard
 def sponsorship():
     """

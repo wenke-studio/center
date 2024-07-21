@@ -29,6 +29,7 @@ class LoginState(AuthState):
         self.error = ""
 
 
+@rx.page(route="/auth/login")
 @layouts.landing_page
 def login() -> rx.Component:
     return rx.card(

@@ -3,6 +3,7 @@ import reflex as rx
 from center import layouts
 
 
+@rx.page(route="/")
 @layouts.dashboard
 def home():
     """
