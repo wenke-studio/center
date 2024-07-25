@@ -1,8 +1,14 @@
+from __future__ import annotations
+
 from datetime import datetime, timedelta, timezone
+from typing import TYPE_CHECKING
 
 import bcrypt
 import reflex as rx
-from sqlmodel import Column, DateTime, Field, func
+from sqlmodel import Column, DateTime, Field, Relationship, func
+
+if TYPE_CHECKING:
+    from center.features.api.models import Service
 
 SALT = b"$2b$12$LD76ivI5jIJPYQpTTPXh7."  # created by bcrypt.gensalt()
 
@@ -10,6 +16,8 @@ SALT = b"$2b$12$LD76ivI5jIJPYQpTTPXh7."  # created by bcrypt.gensalt()
 class User(rx.Model, table=True):
     email: str
     password: str
+
+    services: list["Service"] = Relationship(back_populates="user")
 
     @staticmethod
     def hash_password(password: str) -> str:

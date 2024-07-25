@@ -1,9 +1,9 @@
-from .decorators import require_login
+from .decorators import login_required
 from .states import AuthState, LoginState, RegisterState
 from .models import User, Token
 
 __all__ = [
-    "require_login",
+    "login_required",
     "AuthState",
     "LoginState",
     "RegisterState",
