@@ -20,6 +20,7 @@ LINES = [
 ]
 
 
+@rx.page(route="/discover")
 @layouts.dashboard
 def discover():
     """

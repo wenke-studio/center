@@ -1,8 +1,8 @@
-"""initial-service-model
+"""service
 
-Revision ID: 61e94200eb47
-Revises: 1baa51ce6ec2
-Create Date: 2024-07-17 00:09:20.922669
+Revision ID: d8f3c9dce545
+Revises: a9a2c6a17b8a
+Create Date: 2024-07-22 09:58:53.324235
 
 """
 from typing import Sequence, Union
@@ -12,8 +12,8 @@ import sqlalchemy as sa
 import sqlmodel
 
 # revision identifiers, used by Alembic.
-revision: str = '61e94200eb47'
-down_revision: Union[str, None] = '1baa51ce6ec2'
+revision: str = 'd8f3c9dce545'
+down_revision: Union[str, None] = 'a9a2c6a17b8a'
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
 

@@ -1,21 +1,10 @@
 from enum import Enum
-from typing import List, Optional
+from typing import Optional
 
 import reflex as rx
 from sqlmodel import Field, Relationship
 
-
-class User(rx.Model, table=True):
-    """User Table"""
-
-    email: str = Field(unique=True)
-    password: str
-
-    # Metadata
-    username: str = ""
-
-    # Relationships
-    services: List["Service"] = Relationship(back_populates="user")
+from center.features.authentication.models import User
 
 
 class ServiceStatus(Enum):
@@ -31,8 +20,6 @@ class ServiceCurrency(Enum):
 class Service(rx.Model, table=True):
     """Service Table"""
 
-    user_id: int = Field(foreign_key="user.id")
-
     name: str
 
     status: str = Field(default=ServiceStatus.active)
@@ -42,4 +29,5 @@ class Service(rx.Model, table=True):
     billing_cycle: Optional[str] = Field(default="monthly")
 
     # Relationships
+    user_id: int = Field(foreign_key="user.id")
     user: User = Relationship(back_populates="services")

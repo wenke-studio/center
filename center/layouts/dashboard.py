@@ -6,6 +6,7 @@ from .sidebar import sidebar
 
 items = [
     {"text": "Discover", "href": "/discover"},
+    {"text": "Service", "href": "/service"},
     {"text": "sponsorship", "href": "/sponsorship"},
 ]
 
