@@ -80,10 +80,13 @@ class RegisterState(AuthState):
     def _validate_fields(self) -> rx.event.EventSpec | list[rx.event.EventSpec] | None:
         if not self.email:
             self.error = "Email is required"
-            return (rx.set_focus("email"),)
+            return rx.set_focus("email")
         if not self.password:
             self.error = "Password is required"
             return rx.set_focus("password")
+        if not self.confirm_password:
+            self.error = "Confirm password is required"
+            return rx.set_focus("confirm_password")
         if self.password != self.confirm_password:
             self.error = "Passwords do not match"
             return [
