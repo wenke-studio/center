@@ -1,6 +1,6 @@
 import reflex as rx
 
-from center.features.authentication.states import LogoutState
+from center.backend.authentication.states import LogoutState
 
 Item = dict[str, str]
 

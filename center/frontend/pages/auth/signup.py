@@ -1,7 +1,7 @@
 import reflex as rx
 
-from center import layouts
-from center.features.authentication.states import RegisterState
+from center.backend.authentication.states import RegisterState
+from center.frontend import layouts
 
 
 @rx.page(route="/auth/signup")

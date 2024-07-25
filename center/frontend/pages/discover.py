@@ -1,7 +1,7 @@
 import reflex as rx
 
-from center import layouts
-from center.components import charts
+from center.frontend import layouts
+from center.frontend.components import charts
 
 line_example = [
     {"name": "A", "a": 100, "b": 200, "e": 300, "f": 400},

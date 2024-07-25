@@ -1,9 +1,9 @@
 import reflex as rx
 from sqlmodel import select
 
-from center import layouts
-from center.features.api.models import Service
-from center.features.authentication import AuthState, login_required
+from center.frontend import layouts
+from center.backend.authentication import AuthState, login_required
+from center.backend.service.models import Service
 
 
 class ServiceState(AuthState):

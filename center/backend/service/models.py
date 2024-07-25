@@ -4,7 +4,7 @@ from typing import Optional
 import reflex as rx
 from sqlmodel import Field, Relationship
 
-from center.features.authentication.models import User
+from center.backend.authentication.models import User
 
 
 class ServiceStatus(Enum):

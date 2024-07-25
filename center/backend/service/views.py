@@ -6,7 +6,7 @@ from fastapi import APIRouter, Request
 from pydantic import BaseModel
 from sqlmodel import select
 
-from center.features.api.models import Service
+from .models import Service
 
 
 class Srv(BaseModel):
@@ -75,11 +75,3 @@ async def destroy_service(user_id: int, service_id: int) -> OK:
         session.commit()
     return OK(message="OK")
 
-
-router = APIRouter(prefix="/service", tags=["service"])
-
-router.add_api_route("/", list_services, methods=["GET"])
-router.add_api_route("/", create_service, methods=["POST"])
-router.add_api_route("/{service_id}", retrieve_service, methods=["GET"])
-router.add_api_route("/{service_id}", update_service, methods=["PUT"])
-router.add_api_route("/{service_id}", destroy_service, methods=["DELETE"])

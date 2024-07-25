@@ -1,7 +1,7 @@
 from .models import Service
-from .service import router as service
+from .routers import router
 
 __all__ = [
-    "service",
+    "router",
     "Service",
 ]

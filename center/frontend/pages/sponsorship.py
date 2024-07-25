@@ -1,6 +1,7 @@
 import reflex as rx
 
-from center import layouts
+from center.frontend import layouts
+
 
 @rx.page(route="/sponsorship")
 @layouts.dashboard

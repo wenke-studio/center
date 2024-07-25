@@ -8,8 +8,9 @@ import reflex as rx
 from sqlmodel import Column, DateTime, Field, Relationship, func
 
 if TYPE_CHECKING:
-    from center.features.api.models import Service
+    from center.backend.service.models import Service
 
+# fixme: use env instead of hardcoded salt
 SALT = b"$2b$12$LD76ivI5jIJPYQpTTPXh7."  # created by bcrypt.gensalt()
 
 

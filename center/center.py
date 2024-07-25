@@ -1,8 +1,8 @@
 import reflex as rx
 
-from center import pages  # noqa
-from center.features.api import service
+from center.backend.service import router
+from center.frontend import pages  # noqa
 
 app = rx.App()
 
-app.api.include_router(service)
+app.api.include_router(router)
